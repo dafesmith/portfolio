@@ -1,0 +1,243 @@
+.project {
+  min-height: 100vh;
+  padding: clamp(90px, 8vw, 120px) var(--spaceOuter) 0 max(var(--spaceOuter), 160px);
+}
+
+.content {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.back a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.header {
+  max-width: 900px;
+  padding: clamp(24px, 3vw, 48px) 0 40px;
+}
+
+.eyebrow {
+  display: block;
+  color: var(--primary);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.attribution {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--textBody);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+.header h1 {
+  margin: 20px 0 26px;
+  font-size: clamp(3.2rem, 8vw, 7.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.summary {
+  max-width: 720px;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.5;
+}
+
+.headerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #2d3a4b;
+  border-radius: 16px;
+  background: #111827;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.17);
+}
+
+.figureHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px clamp(16px, 2vw, 26px);
+  border-bottom: 1px solid #2d3a4b;
+  color: #d3deec;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.figureDots {
+  display: flex;
+  gap: 6px;
+}
+
+.figureDots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #526176;
+}
+
+.figureSurface {
+  padding: clamp(12px, 2vw, 26px);
+}
+
+.figureSurface a {
+  display: block;
+}
+
+.figureSurface a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  max-height: 680px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.portraitFigure img {
+  width: min(100%, 850px);
+  max-height: none;
+  height: auto;
+  margin: 0 auto;
+}
+
+.figure figcaption {
+  padding: 0 clamp(16px, 2vw, 26px) 20px;
+  color: #b8c7d7;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.figure figcaption a {
+  color: #fff;
+  text-underline-offset: 3px;
+}
+
+.demo {
+  padding: clamp(68px, 8vw, 110px) 0 0;
+  max-width: 1000px;
+}
+
+.demo h2 {
+  margin: 16px 0 18px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  letter-spacing: -0.04em;
+}
+
+.demo > p {
+  max-width: 760px;
+  margin: 0 0 36px;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  line-height: 1.7;
+}
+
+.demoSteps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0 0 36px;
+  padding: 0;
+  list-style: none;
+}
+
+.demoSteps li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--primary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .header {
+    animation: pageEnter 700ms ease-out both;
+  }
+
+  .figure img {
+    transition: transform 450ms ease;
+  }
+
+  .figure:hover img {
+    transform: scale(1.012);
+  }
+
+  .demoSteps li {
+    transition: transform 260ms ease, border-color 260ms ease;
+  }
+
+  .demoSteps li:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.demoSteps strong {
+  font-size: 1.15rem;
+}
+
+.demoSteps span {
+  line-height: 1.55;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(250px, 0.8fr);
+  gap: clamp(50px, 9vw, 130px);
+  padding: clamp(70px, 10vw, 140px) 0;
+}
+
+.grid h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+.grid p {
+  margin: 0 0 54px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.grid ul {
+  padding-left: 22px;
+  margin: 0 0 42px;
+  line-height: 2;
+}
+
+.next {
+  padding-bottom: 120px;
+}
+
+@media (max-width: 1024px) {
+  .project {
+    padding-left: var(--spaceOuter);
+  }
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demoSteps {
+    grid-template-columns: 1fr;
+  }
+}

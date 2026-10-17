@@ -1,39 +1,10 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+Dafe Smith Ofoh portfolio
 
-The humans.txt file explains the team, technology,
-and graphic assets behind this site humanstxt.org.
+Content and featured projects: Dafe Smith Ofoh and Fanoni.
+Original portfolio design and source: Hamish Williams
+https://github.com/HamishMW/portfolio
 
-_______________________________________________________________________________
+This adaptation retains the original site's visual direction and credits its designer.
+Built with Remix, React, Three.js, and Framer Motion.
 
-DESIGNER | デザイナー
-
-Hamish Williams
-Hand crafted design & web development
-
-Design tools:
-Figma
-Photoshop
-Blender
-
-twitter.com/hamishmw
-github.com/hamishmw
-
-_______________________________________________________________________________
-
-TECHNOLOGY | テクノロジー
-
-React
-Remix
-Three.js
-Framer Motion
-
-_______________________________________________________________________________
-
-FONTS | フォント
-
-Gotham
-IPA Gothic Regular
-Hiragino Kaku Gothic W8
+Some project visuals are explicitly labeled illustrations or synthetic demos.

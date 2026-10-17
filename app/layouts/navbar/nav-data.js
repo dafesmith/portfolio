@@ -10,10 +10,6 @@ export const navLinks = [
     pathname: '/#details',
   },
   {
-    label: 'Articles',
-    pathname: '/articles',
-  },
-  {
     label: 'Contact',
     pathname: '/contact',
   },
@@ -21,17 +17,7 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Bluesky',
-    url: `https://bsky.app/profile/${config.bluesky}`,
-    icon: 'bluesky',
-  },
-  {
-    label: 'Figma',
-    url: `https://www.figma.com/${config.figma}`,
-    icon: 'figma',
-  },
-  {
-    label: 'Github',
+    label: 'GitHub',
     url: `https://github.com/${config.github}`,
     icon: 'github',
   },

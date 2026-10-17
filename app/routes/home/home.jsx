@@ -1,15 +1,3 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -17,34 +5,23 @@ import { Profile } from './profile';
 import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
+import { projects } from '~/data/projects';
 import styles from './home.module.css';
 
-// Prefetch draco decoader wasm
-export const links = () => {
-  return [
-    {
-      rel: 'prefetch',
-      href: '/draco/draco_wasm_wrapper.js',
-      as: 'script',
-      type: 'text/javascript',
-      importance: 'low',
-    },
-    {
-      rel: 'prefetch',
-      href: '/draco/draco_decoder.wasm',
-      as: 'fetch',
-      type: 'application/wasm',
-      importance: 'low',
-    },
-  ];
-};
+export const links = () => [
+  { rel: 'prefetch', href: '/draco/draco_wasm_wrapper.js', as: 'script', type: 'text/javascript' },
+  { rel: 'prefetch', href: '/draco/draco_decoder.wasm', as: 'fetch', type: 'application/wasm' },
+];
 
-export const meta = () => {
-  return baseMeta({
-    title: 'Designer + Developer',
-    description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
-  });
-};
+export const meta = () => baseMeta({
+  title: 'Senior DevOps & AI Engineer',
+  description: `${config.name} builds reliable cloud platforms and practical AI systems, with work across healthcare, imaging, and decision support.`,
+});
+
+const screen = (path, width) => ({
+  srcSet: `${path} ${width}w`,
+  placeholder: path,
+});
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -53,121 +30,97 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
+  const projectFive = useRef();
+  const projectSix = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, projectFive, projectSix, details];
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
+          setVisibleSections(previous => [...previous, entry.target]);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    const indicatorObserver = new IntersectionObserver(([entry]) => {
+      setScrollIndicatorHidden(!entry.isIntersecting);
+    }, { rootMargin: '-100% 0px 0px 0px' });
 
-    const sectionObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const section = entry.target;
-            observer.unobserve(section);
-            if (visibleSections.includes(section)) return;
-            setVisibleSections(prevSections => [...prevSections, section]);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
-    );
-
-    const indicatorObserver = new IntersectionObserver(
-      ([entry]) => {
-        setScrollIndicatorHidden(!entry.isIntersecting);
-      },
-      { rootMargin: '-100% 0px 0px 0px' }
-    );
-
-    sections.forEach(section => {
-      sectionObserver.observe(section.current);
-    });
-
+    sections.forEach(section => sectionObserver.observe(section.current));
     indicatorObserver.observe(intro.current);
-
     return () => {
       sectionObserver.disconnect();
       indicatorObserver.disconnect();
     };
-  }, [visibleSections]);
+  }, []);
 
   return (
     <div className={styles.home}>
-      <Intro
-        id="intro"
-        sectionRef={intro}
-        scrollIndicatorHidden={scrollIndicatorHidden}
+      <Intro id="intro" sectionRef={intro} scrollIndicatorHidden={scrollIndicatorHidden} />
+      <ProjectSummary
+        id="project-1" sectionRef={projectOne}
+        visible={visibleSections.includes(projectOne.current)} index={1}
+        title="Make AI decisions inspectable"
+        description="GraphRAG Decision Trace connects an answer to graph context, policy evidence, and a reviewable reasoning path."
+        buttonText="Explore project" buttonLink="/projects/graphrag-decision-trace"
+        repositoryLink={projects['graphrag-decision-trace'].repository}
+        repositoryPrivate={projects['graphrag-decision-trace'].repositoryPrivate}
+        model={{ type: 'laptop', alt: projects['graphrag-decision-trace'].imageAlt, textures: [screen(projects['graphrag-decision-trace'].image, 2972)] }}
       />
       <ProjectSummary
-        id="project-1"
-        sectionRef={projectOne}
-        visible={visibleSections.includes(projectOne.current)}
-        index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
-        buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
-        model={{
-          type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
-          textures: [
-            {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
-              placeholder: sprTexturePlaceholder,
-            },
-          ],
-        }}
+        id="project-2" alternate sectionRef={projectTwo}
+        visible={visibleSections.includes(projectTwo.current)} index={2}
+        title="A note you can trace back"
+        description="Fanoni Scribe keeps a draft SOAP note connected to the conversation so a clinician can review it before signing."
+        buttonText="Explore project" buttonLink="/projects/fanoni-scribe"
+        repositoryLink={projects['fanoni-scribe'].repository}
+        repositoryPrivate={projects['fanoni-scribe'].repositoryPrivate}
+        model={{ type: 'laptop', alt: projects['fanoni-scribe'].imageAlt, textures: [screen(projects['fanoni-scribe'].image, 1440)] }}
       />
       <ProjectSummary
-        id="project-2"
-        alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
-        model={{
-          type: 'phone',
-          alt: 'App login screen',
-          textures: [
-            {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
-            },
-            {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
-            },
-          ],
-        }}
-      />
-      <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={3}
+        id="project-3" sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)} index={3}
         title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
-        buttonLink="/projects/slice"
-        model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
-          textures: [
-            {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
-            },
-          ],
-        }}
+        description="Fanoni Imaging keeps DICOM review, measurements, and annotations connected to the same study."
+        buttonText="Explore project" buttonLink="/projects/fanoni-imaging"
+        repositoryLink={projects['fanoni-imaging'].repository}
+        repositoryPrivate={projects['fanoni-imaging'].repositoryPrivate}
+        model={{ type: 'laptop', alt: projects['fanoni-imaging'].imageAlt, textures: [screen(projects['fanoni-imaging'].image, 2800)] }}
       />
-      <Profile
-        sectionRef={details}
-        visible={visibleSections.includes(details.current)}
-        id="details"
+      <ProjectSummary
+        id="project-4" alternate sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)} index={4}
+        title="Fanoni Care Chat"
+        description="Explore care questions through cited research and clinical trials, save studies that matter, and find a path to human support."
+        buttonText="Explore project" buttonLink="/projects/fanoni-care-chat"
+        liveLink={projects['fanoni-care-chat'].links[0]}
+        repositoryLink={projects['fanoni-care-chat'].repository}
+        repositoryPrivate={projects['fanoni-care-chat'].repositoryPrivate}
+        model={{ type: 'laptop', alt: 'Fanoni Care Chat live pilot screenshot showing a clinical trial research question and a public study record', textures: [{ ...screen('/projects/fanoni-care-chat-live.png', 1334), crop: { top: 0.1, height: 0.455 } }] }}
       />
+      <ProjectSummary
+        id="project-5" sectionRef={projectFive}
+        visible={visibleSections.includes(projectFive.current)} index={5}
+        title="From chart context to care action"
+        description="Fanoni EHR connects results, medications, care plans, and visit work in one practitioner workspace."
+        buttonText="Explore project" buttonLink="/projects/fanoni-ehr"
+        liveLink={projects['fanoni-ehr'].links[0]}
+        repositoryLink={projects['fanoni-ehr'].repository}
+        repositoryPrivate={projects['fanoni-ehr'].repositoryPrivate}
+        model={{ type: 'laptop', alt: projects['fanoni-ehr'].imageAlt, textures: [screen(projects['fanoni-ehr'].image, 1126)] }}
+      />
+      <ProjectSummary
+        id="project-6" alternate sectionRef={projectSix}
+        visible={visibleSections.includes(projectSix.current)} index={6}
+        title="Clinical AI that shows its work"
+        description="Fanoni Clinical AI routes chart, medication, coding, and evidence questions to focused tools with clear source and safety boundaries."
+        buttonText="Explore project" buttonLink="/projects/clinical-medical-agent"
+        model={{ type: 'laptop', alt: projects['clinical-medical-agent'].imageAlt, textures: [screen(projects['clinical-medical-agent'].image, 1240)] }}
+      />
+      <Profile sectionRef={details} visible={visibleSections.includes(details.current)} id="details" />
       <Footer />
     </div>
   );

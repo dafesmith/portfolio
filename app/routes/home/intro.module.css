@@ -56,7 +56,8 @@
 
   @media (--mediaMobile) {
     margin-bottom: var(--spaceL);
-    letter-spacing: 0.2em;
+    font-size: calc((14 / 16) * 1rem);
+    letter-spacing: 0.13em;
     white-space: nowrap;
     overflow: hidden;
   }

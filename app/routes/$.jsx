@@ -6,7 +6,7 @@ export async function loader() {
 }
 
 export const meta = () => {
-  return [{ title: '404 | Redacted' }];
+  return [{ title: 'Page not found | Dafe Smith Ofoh' }];
 };
 
 export function ErrorBoundary() {

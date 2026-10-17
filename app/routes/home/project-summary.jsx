@@ -28,6 +28,10 @@ export function ProjectSummary({
   model,
   buttonText,
   buttonLink,
+  liveLink,
+  repositoryLink,
+  repositoryPrivate,
+  repositoryLabel,
   alternate,
   ...rest
 }) {
@@ -93,6 +97,16 @@ export function ProjectSummary({
           <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
             {buttonText}
           </Button>
+          {liveLink && (
+            <Button secondary href={liveLink.href} iconEnd="arrow-right">
+              {liveLink.label}
+            </Button>
+          )}
+          {repositoryLink && (
+            <Button secondary href={repositoryLink} iconEnd="arrow-right">
+              {repositoryLabel || (repositoryPrivate ? 'Private GitHub repo' : 'GitHub repository')}
+            </Button>
+          )}
         </div>
       </div>
     );

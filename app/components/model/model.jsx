@@ -374,6 +374,11 @@ const Device = ({
       texture.flipY = false;
       texture.anisotropy = renderer.current.capabilities.getMaxAnisotropy();
       texture.generateMipmaps = false;
+      if (model.texture.crop) {
+        const { top, height } = model.texture.crop;
+        texture.repeat.set(1, height);
+        texture.offset.set(0, top);
+      }
 
       // Decode the texture to prevent jank on first render
       await renderer.current.initTexture(texture);

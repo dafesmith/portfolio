@@ -139,6 +139,67 @@
   }
 }
 
+:global(#project-4) .model[data-device='laptop'] {
+  --width: 120%;
+
+  left: -15%;
+  transform: scale(0.78);
+  transform-origin: left center;
+
+  @media (--mediaTablet) {
+    --width: 140%;
+
+    left: 0;
+    transform: none;
+  }
+}
+
+:global(#project-2) .model[data-device='laptop'] {
+  --width: 140%;
+
+  left: -14%;
+  transform: scale(0.9);
+  transform-origin: left center;
+
+  @media (--mediaTablet) {
+    --width: 140%;
+
+    left: 0;
+    transform: none;
+  }
+}
+
+:global(#project-6) .model[data-device='laptop'] {
+  --width: 160%;
+
+  left: -13%;
+  transform: scale(1);
+  transform-origin: left center;
+
+  @media (--mediaTablet) {
+    --width: 140%;
+
+    left: 0;
+    transform: none;
+  }
+}
+
+:global(#project-6) .svg[data-device='laptop'][data-visible='true'] {
+  opacity: 0.08;
+}
+
+:global(#project-2) .svg[data-device='laptop'] {
+  right: 5%;
+}
+
+:global(#project-4) .svg[data-device='laptop'][data-visible='true'] {
+  opacity: 0.12;
+}
+
+:global(#project-5) .svg[data-device='laptop'][data-visible='true'] {
+  opacity: 0.08;
+}
+
 .loader {
   opacity: 0;
   transition: opacity 400ms ease 1000ms;
@@ -258,6 +319,10 @@
 }
 
 .button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);
