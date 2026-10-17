@@ -1,17 +1,34 @@
-# Dafe Smith Ofoh — portfolio
+# Dafe Smith Ofoh
 
-A personal portfolio for DevOps, AI engineering, and healthcare software projects. This first draft keeps the visual direction of [Hamish Williams' open-source portfolio](https://github.com/HamishMW/portfolio), including its motion and device models. The featured projects and personal copy have been replaced with Dafe's work. Original design credit is also included in `public/humans.txt`.
+**Senior DevOps & AI Engineer · SRE · Cloud Architect**
 
-## Featured work
+I build and operate production cloud platforms, then use that foundation to ship practical AI systems. I have more than ten years of experience across retail, aerospace, defense, energy, and online services. My recent work focuses on healthcare software and AI that keeps its sources visible and its decisions reviewable.
 
-- GraphRAG Decision Trace — public prototype for traceable AI decisions
-- Fanoni Scribe — clinical documentation workflow
-- Biomedical image collaboration — Fanoni Imaging, based on OHIF v3 and Orthanc
-- Fanoni Care Chat — care research pilot with cited papers, trial records, saved studies, and a support-request path
-- Fanoni EHR — practitioner-facing clinical workspace
-- Fanoni Clinical AI Agent — pre-deployment clinical agent pilot; source temporarily private while exposed credentials are addressed
+[Portfolio](https://dafesmith.com) · [GitHub](https://github.com/dafesmith) · [LinkedIn](https://www.linkedin.com/in/dafe-o-52310b167) · [Email](mailto:dafesmith0@gmail.com) · [Fanoni on Hugging Face](https://huggingface.co/Fanoni)
 
-Project pages distinguish public repositories, private project summaries, synthetic demonstration data, and illustrative artwork. No patient data is used in the portfolio visuals.
+## What I do
+
+- **Cloud platforms:** Build and run AWS and Azure infrastructure with Terraform, Kubernetes (EKS and AKS), networking, high availability, and disaster recovery.
+- **Reliable delivery:** Develop CI/CD pipelines, observability, SLOs, alerting, and incident response practices for production services.
+- **AI engineering:** Build retrieval-augmented generation (RAG) systems, agents, knowledge graphs, and integrations that connect models to useful tools and data.
+- **Healthcare software:** Apply platform and AI engineering to clinical documentation, FHIR workflows, biomedical imaging, care research, and source-grounded clinical assistance.
+
+## Selected projects
+
+| Project | What it shows | Explore |
+| --- | --- | --- |
+| GraphRAG Decision Trace | An AI decision-support prototype that connects answers to graph context and evidence. | [Case study](https://dafesmith.com/projects/graphrag-decision-trace) · [Code](https://github.com/dafesmith/graphrag-decision-trace) |
+| Fanoni Scribe | A clinical documentation workflow with transcript-linked draft notes for clinician review. | [Case study](https://dafesmith.com/projects/fanoni-scribe) · [Code](https://github.com/Fanoni-ai/fanoni-scribe) |
+| Biomedical image collaboration | DICOM study review with measurements and annotations, built on OHIF and Orthanc. | [Case study](https://dafesmith.com/projects/fanoni-imaging) · [Code](https://github.com/Fanoni-ai/fanoni-imaging) |
+| Fanoni Care Chat | Care research with cited papers, public trial records, saved studies, and a support-request path. | [Case study](https://dafesmith.com/projects/fanoni-care-chat) · [Live product](https://care.fanoni.ai/) |
+| Fanoni EHR | A practitioner workspace for chart context, care plans, and visit workflows. | [Case study](https://dafesmith.com/projects/fanoni-ehr) · [Live product](https://ehr.fanoni.ai/) |
+| Fanoni Clinical AI Agent | Focused chart, medication, coding, and evidence tools with explicit source and safety boundaries. | [Case study](https://dafesmith.com/projects/clinical-medical-agent) |
+
+The clinical agent source is temporarily private while exposed credentials are addressed. Project pages distinguish public repositories, private project summaries, synthetic demonstration data, and illustrative artwork. No patient data is used in the portfolio visuals.
+
+## About this site
+
+This repository powers [dafesmith.com](https://dafesmith.com). It adapts the visual direction of [Hamish Williams' open-source portfolio](https://github.com/HamishMW/portfolio), including its motion and device models. The original design credit is also included in `public/humans.txt`.
 
 ## Run locally
 
