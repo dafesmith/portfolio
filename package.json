@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "description": "Portfolio site for Dafe Smith Ofoh, adapted from Hamish Williams' open-source portfolio.",
-  "author": "Dafe Smith Ofoh",
+  "description": "Portfolio site for Dafe Ofoh, adapted from Hamish Williams' open-source portfolio.",
+  "author": "Dafe Ofoh",
   "sideEffects": false,
   "type": "module",
   "scripts": {

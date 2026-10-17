@@ -1,10 +1,10 @@
-# Dafe Smith Ofoh
+# Dafe Ofoh
 
 **Senior DevOps & AI Engineer · SRE · Cloud Architect**
 
 I build and operate production cloud platforms, then use that foundation to ship practical AI systems. I have more than ten years of experience across retail, aerospace, defense, energy, and online services. My recent work focuses on healthcare software and AI that keeps its sources visible and its decisions reviewable.
 
-[Portfolio](https://dafesmith.com) · [GitHub](https://github.com/dafesmith) · [LinkedIn](https://www.linkedin.com/in/dafe-smith-ofoh-b35592196/) · [Email](mailto:dafesmith0@gmail.com) · [Fanoni on Hugging Face](https://huggingface.co/Fanoni)
+[Portfolio](https://dafesmith.com) · [GitHub](https://github.com/dafesmith) · [LinkedIn](https://www.linkedin.com/in/dafe-ofoh-b35592196/) · [Email](mailto:dafesmith0@gmail.com) · [Fanoni on Hugging Face](https://huggingface.co/Fanoni)
 
 ## What I do
 

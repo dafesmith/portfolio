@@ -14,7 +14,7 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="About me" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Dafe Smith Ofoh, a Senior DevOps &amp; AI Engineer with more than ten years
+      I’m Dafe Ofoh, a Senior DevOps &amp; AI Engineer with more than ten years
       of experience building and operating production cloud platforms. I work across
       AWS and Azure, AKS and EKS, Terraform, delivery pipelines, and observability.
     </Text>

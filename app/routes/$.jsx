@@ -6,7 +6,7 @@ export async function loader() {
 }
 
 export const meta = () => {
-  return [{ title: 'Page not found | Dafe Smith Ofoh' }];
+  return [{ title: 'Page not found | Dafe Ofoh' }];
 };
 
 export function ErrorBoundary() {

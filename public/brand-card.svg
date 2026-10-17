@@ -6,7 +6,7 @@
   <circle cx="1120" cy="160" r="100" fill="none" stroke="#54cfbd" stroke-width="2"/>
   <circle cx="1120" cy="160" r="55" fill="none" stroke="#54cfbd" stroke-width="2" opacity=".5"/>
   <text x="130" y="245" fill="#72e0cf" font-family="Arial,sans-serif" font-size="28" letter-spacing="8">PORTFOLIO</text>
-  <text x="120" y="395" fill="#f3f7f9" font-family="Arial,sans-serif" font-size="88" font-weight="700">Dafe Smith Ofoh</text>
+  <text x="120" y="395" fill="#f3f7f9" font-family="Arial,sans-serif" font-size="88" font-weight="700">Dafe Ofoh</text>
   <text x="130" y="490" fill="#b9c9d1" font-family="Arial,sans-serif" font-size="38">Senior DevOps &amp; AI Engineer</text>
   <text x="130" y="645" fill="#7fe0d1" font-family="Arial,sans-serif" font-size="23" letter-spacing="4">CLOUD PLATFORMS  /  AI SYSTEMS  /  HEALTHCARE</text>
 </svg>

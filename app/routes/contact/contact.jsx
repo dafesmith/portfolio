@@ -10,7 +10,7 @@ import config from '~/config.json';
 import styles from './contact.module.css';
 
 const projectInquiryHref = `mailto:${config.email}?subject=${encodeURIComponent(
-  'Project inquiry for Dafe Smith Ofoh'
+  'Project inquiry for Dafe Ofoh'
 )}&body=${encodeURIComponent(
   'Hi Dafe,\n\nI’m building:\n\nThe help I’m looking for:\n\nMy timeline:\n\nBest way to reach me:\n'
 )}`;
@@ -19,7 +19,7 @@ export const meta = () =>
   baseMeta({
     title: 'Contact',
     description:
-      'Discuss a DevOps, cloud, AI, or healthcare software project with Dafe Smith Ofoh.',
+      'Discuss a DevOps, cloud, AI, or healthcare software project with Dafe Ofoh.',
   });
 
 export const Contact = () => (
